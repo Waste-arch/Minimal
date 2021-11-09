@@ -1,0 +1,290 @@
+@import "nullstyle.scss";
+//Ссылки на шрифты макета
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+body{
+    font-family: 'Playfair Display';
+    font-size: 14px;
+    
+}
+//Шаблон для Sections Size
+%sections-size{
+    width: 420px;
+    height: 100%; 
+}
+//Шаблон с настройками для Sections
+%sections-options {
+    display: flex;
+    justify-content: space-between;
+    width: 900px;
+    height: 490px;
+}
+
+
+
+//Header сайта
+.header{
+    .wrapper{
+        height: 672px;
+        width: 1060px;      
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; //Раздвигаем блоки по разным сторонам
+        //Навигация
+        .header__nav{
+            display: flex;
+            height: 30px;
+            width: 1060px;       
+            margin: 68px 0 0 0;
+            align-items: center;
+            justify-content: space-between;
+            //Логотип
+            .logo{
+                font-family: Inconsolata;
+                font-size: 30px;                             
+                text-transform: uppercase;
+                letter-spacing: 0.2em;
+                color: #000000;
+            }
+            .header__menu{
+                ul{
+                    display: flex;                    
+                    
+                }
+                //Текст для ссылок меню
+                & ul a {                                    
+                    text-transform: uppercase;
+                    color: #626262;      
+                    padding-left: 121px;             
+                }
+                & ul a:hover {
+                    color: #626262c2; 
+                }
+            }
+        }
+        //Картинка для Header
+        .header__image{
+            img{
+                //Не даем картинке стать больше основного ее блока 
+                max-width: 100%;
+                min-height: 100%;
+                
+            }          
+        }
+    }
+    //Размеры Header
+    height: 672px;
+    width: 100%;
+}
+
+
+
+//Это общий класс для секции в макете
+.section-content{
+    .section-subtitle{
+        font-family: Ubuntu;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #b4ad9e;
+        padding-top: 27px;
+    }
+    .section-title{
+        font-size: 30px;      
+        color: #626262;
+        padding-top: 25px;
+    }
+    .section-text{
+        line-height: 22px;
+        color: #626262;
+        padding-top: 30px;
+    }
+}
+
+//Разделы сайта на секции
+.sections{
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    margin: 0 0 300px 0;
+    .section1{
+        width: 900px;
+        height: 350px;
+        margin: 0 auto;
+        //Подзаголовок 
+        .section1__subtitle{
+            font-family: Ubuntu;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: #b4ad9e;    
+            padding-bottom: 23px;       
+        }    
+        //Заголовок
+        .section1__title{
+            font-size: 30px;                       
+            color: #626262;
+            padding-bottom: 30px;
+        }  
+        //Основной текст
+        .section1__text{
+            line-height: 24px;
+            font-weight: 400;
+            color: #626262;
+            padding-bottom: 45px;
+        }
+        //Кпопка с ссылкой
+        .section1__button{
+            & a {
+                font-family: Ubuntu;
+                line-height: 1.2;
+                font-weight: 300;
+                text-transform: uppercase;
+                color: #b4ad9e;
+            }
+            & a:hover {
+                color: #b4ad9ec2;
+            }
+        }
+    }
+    .section2{       
+        @extend %sections-options;       
+        margin: 134px auto 200px auto;     
+        .section2__content1{
+            // Подключаем шаблон
+            @extend %sections-size;           
+        }
+        
+        .section2__content2{
+            // Подключаем шаблон
+            @extend %sections-size; 
+        }
+    }
+    .section3{       
+        @extend %sections-options;      
+        margin: 132px auto 0 auto;       
+        .section3__content1{
+            // Подключаем шаблон
+            @extend %sections-size; 
+        }
+        .section3__content2{
+            // Подключаем шаблон
+            @extend %sections-size; 
+        }
+    }
+    .section4{
+        width: 100%;
+        height: 287px;
+        background-color:#f0f0f0;;
+        margin: 122px 0 0 0;
+        .section4__title{           
+            font-size: 30px;
+            letter-spacing: 0.025em;
+            color: #333333;
+            text-align: center;
+            padding: 72px 0 0 0;
+        }
+        .section4__container{
+            width: 400px;
+            height: 40px;
+            margin: 82px auto 0 auto;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            
+            .section4__text{
+                color: #626262;
+                
+            }
+            .section4__button a{
+                &:hover{
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+    .section5{       
+        @extend %sections-options;       
+        margin: 103px auto 0 auto;        
+        .section5__content1{
+            // Подключаем шаблон
+            @extend %sections-size; 
+        }
+        .section5__content2{
+            // Подключаем шаблон
+            @extend %sections-size; 
+        }
+    }
+    .section6{
+        
+        .section6__button{
+            width: 164px;
+            height: 60px;
+            border: 1px solid #626262;
+            margin: 170px auto 0 auto;
+            text-align: center;
+            line-height: 60px;
+            font-size: 20px;
+            background-color:white;
+            & a {
+                color: #626262;
+                &:hover{
+                    color: #626262bb;
+                }
+            }
+            &:hover{
+                background-color:rgba(255, 255, 255, 0.747);
+                border: 1px solid #626262bb;
+                transition-duration: 0.5s;
+            }
+
+        }
+    }
+}
+
+//Подвал
+.footer{
+    height: 100px;
+    width: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .aside{
+        display: flex;
+        justify-content: space-between;
+        width: 1060px; 
+        height: 15%;
+        .footer__text{
+            & a {               
+                font-size: 14px;
+                color: #000000;
+                padding-right: 17px;
+            }        
+            & a:hover {
+                color: #000000b6;
+            }
+        }     
+        .footer__links{
+            .footer__items{
+                display: flex;
+                .footer__item1 a{                   
+                    font-size: 14px;                 
+                    color: #000000;
+                    &:hover {
+                        color: #000000b6;
+                    }
+                }               
+                & a {
+                    padding-left: 21px;
+                }
+
+                & img:hover {
+                    opacity: 0.6;
+                }
+                
+            }
+        }  
+    }
+}
